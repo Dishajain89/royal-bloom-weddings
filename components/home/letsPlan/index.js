@@ -26,7 +26,7 @@ const LetsPlan = () => {
             Whether it's a wedding, birthday, or corporate event, we bring your vision to life with elegance and perfection.
           </p>
           <motion.a 
-            href="/contact" 
+            href="/contactUs" 
             className={styles.ctaButton}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}

@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import styles from "./style.module.scss";
 
 const services = [
@@ -41,15 +42,19 @@ const ALlSection = () => {
         <h2>Our Services</h2>
       </div>
       {services.map((service, index) => (
-        <div key={service.id} className={styles.serviceItem}>
+        <motion.div key={service.id} className={styles.serviceItem} initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}>
           <div className={styles.text}>
             <h3>{service.title}</h3>
             <p>{service.description}</p>
           </div>
-          <div className={styles.imageWrapper}>
+          <motion.div className={styles.imageWrapper} initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}>
             <Image src={service.imgSrc} alt={service.title} width={500} height={350} priority />
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       ))}
     </section>
   );

@@ -83,5 +83,15 @@
         }
       }
     }
+
+    @media (max-width: 768px){
+      .serviceItem{
+        flex-direction: column-reverse;
+
+        &:nth-child(even) {
+          flex-direction: column-reverse;
+        }
+      }
+    }
   }
   

@@ -36,7 +36,7 @@ const Testimonial = () => {
           spaceBetween={30}
           slidesPerView={1}
           loop={true}
-          autoplay={{ delay: 5000 }}
+          autoplay={{ delay: 75000 }}
           navigation={{
             nextEl: ".next",
             prevEl: ".prev",

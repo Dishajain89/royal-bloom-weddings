@@ -1,34 +1,57 @@
 @import "../../public/styles/partials/variables";
 .gallerySection {
     text-align: center;
-    padding: 50px 0;
-    // background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/images/gallery-bg.jpg") center/cover;
-    background-color: $secondary-color;
-    color: #fff;
+    padding: 50px 20px;
+    background: $secondary-background;
   
     .title {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
+        font-size: 3rem;
+        font-weight: 700;
+        color: $secondary-color;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 10px;
+  
+        &::after {
+          content: "";
+          width: 80px;
+          height: 4px;
+          background: $secondary-color;
+          display: block;
+          margin: 10px auto;
+        }
+      
+  
+      @media (max-width: 768px) {
+        font-size: 1.8rem;
+      }
     }
   
     .filters {
       display: flex;
+      flex-wrap: wrap;
       justify-content: center;
-      gap: 15px;
+      gap: 10px;
       margin-bottom: 30px;
   
       .filterButton {
-        padding: 10px 20px;
-        border: 2px solid #fff;
+        padding: 8px 15px;
+        font-size: 1rem;
+        border: 2px solid $secondary-color;
         background: transparent;
-        color: #fff;
+        color: $secondary-color;
         cursor: pointer;
         transition: all 0.3s ease-in-out;
   
         &:hover,
         &.active {
-          background: #d4af37;
-          color: #000;
+          background: $secondary-color;
+          color: #fff;
+        }
+  
+        @media (max-width: 768px) {
+          font-size: 0.9rem;
+          padding: 6px 12px;
         }
       }
     }
@@ -36,25 +59,88 @@
     .gridContainer {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      gap: 15px;
       justify-content: center;
+  
+      @media (max-width: 1024px) {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      }
+  
+      @media (max-width: 768px) {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
   
       .imageWrapper {
         position: relative;
         overflow: hidden;
         border-radius: 10px;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
   
-        &:hover .image {
-          transform: scale(1.1);
+        &:hover {
+          transform: scale(1.05);
+        }
+  
+        .image {
+          width: 100%;
+          height: 15rem;
+          border-radius: 10px;
+          object-fit: cover;
         }
       }
+    }
+  }
   
-      .image {
-        width: 100%;
-        height: 10rem;
-        transition: transform 0.3s ease-in-out;
-        border-radius: 10px;
+  /* Fullscreen Modal */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    padding: 20px;
+  
+    @media (max-width: 768px) {
+      padding: 10px;
+    }
+  
+    .closeButton {
+      position: absolute;
+      top: 15px;
+      right: 25px;
+      font-size: 2rem;
+      color: white;
+      background: none;
+      border: none;
+      cursor: pointer;
+      z-index: 1001;
+  
+      @media (max-width: 768px) {
+        font-size: 1.5rem;
+        top: 10px;
+        right: 15px;
       }
+    }
+  
+    .swiper {
+      width: 90%;
+      height: 80vh;
+  
+      @media (max-width: 768px) {
+        width: 95%;
+        height: 65vh;
+      }
+    }
+  
+    .fullImage {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
     }
   }
   

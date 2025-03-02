@@ -136,10 +136,20 @@ background-color: $secondary-background;
     .container {
       flex-direction: column;
       text-align: center;
+      justify-content: center;
     }
 
     .contactDetails {
       margin-bottom: 30px;
+      ul{
+        li{
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    .contactForm{
+      width: 90%;
     }
   }
 }

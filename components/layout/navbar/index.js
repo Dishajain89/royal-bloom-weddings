@@ -11,16 +11,23 @@ const Navbar = () => {
     setMenuOpen(!menuOpen);
   };
 
+  // Function to close menu when a nav link is clicked
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <nav className={styles.navbar}>
-      <div className={styles.logo}>Royal Bloom Weddings</div>
+      <div className={styles.logo}>
+        <Link href="/" onClick={closeMenu}>Royal Bloom Weddings</Link>
+      </div>
 
       <ul className={`${styles.navLinks} ${menuOpen ? styles.active : ""}`}>
-        <li><Link href="/">Home</Link></li>
-        <li><Link href="/aboutUs">About</Link></li>
-        <li><Link href="/services">Services</Link></li>
-        <li><Link href="/gallery">Gallery</Link></li>
-        <li><Link href="/contactUs">Contact</Link></li>
+        <li><Link href="/" onClick={closeMenu}>Home</Link></li>
+        <li><Link href="/aboutUs" onClick={closeMenu}>About</Link></li>
+        <li><Link href="/services" onClick={closeMenu}>Services</Link></li>
+        <li><Link href="/gallery" onClick={closeMenu}>Gallery</Link></li>
+        <li><Link href="/contactUs" onClick={closeMenu}>Contact</Link></li>
       </ul>
 
       <div className={styles.hamburger} onClick={toggleMenu}>

@@ -75,6 +75,20 @@
          }
       }
    }
+
+
+   @media (max-width: 768px){
+
+      .galleryWrapper{
+         top: 15rem;
+         .title{
+            margin-bottom: 2rem;
+         }
+      }
+      .galleryContainer{
+         grid-template-columns: repeat(2, 1fr);
+      }
+   }
 }
 
 @keyframes zoomIn {
