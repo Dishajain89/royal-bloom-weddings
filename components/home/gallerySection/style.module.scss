@@ -1,0 +1,99 @@
+@import "../../../public/styles/partials/variables";
+.gallery {
+   position: relative;
+   width: 100%;
+   height: 100vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   overflow: hidden;
+   padding: 100px 5%;
+
+   // Background Image Container
+   .backgroundImage {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+
+      .bgImage {
+         object-fit: cover;
+         filter: brightness(50%); // Darkens the background for better text visibility
+         animation: zoomIn 10s ease-in-out infinite alternate, floatUpDown 6s ease-in-out infinite;
+      }
+   }
+   .galleryWrapper {
+      position: relative;
+      z-index: 2;
+      top: 9rem;
+      .title {
+         font-size: 2.5rem;
+         font-weight: 700;
+         color: $secondary-color;
+         margin-bottom: 4rem;
+
+         span {
+            color: $primary-color; // Royal Gold
+         }
+      }
+   }
+   .galleryContainer {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      transform: translateY(-30px); // Floating effect
+
+      .galleryItem {
+         position: relative;
+         overflow: hidden;
+         border-radius: 12px;
+         transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+
+         &:hover {
+            transform: translateY(-10px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(255, 215, 0, 0.3); // Luxurious glow
+         }
+
+         img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: opacity 0.3s ease-in-out;
+         }
+
+         &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+         }
+
+         &:hover::after {
+            opacity: 1;
+         }
+      }
+   }
+}
+
+@keyframes zoomIn {
+   0% {
+      transform: scale(1);
+   }
+   100% {
+      transform: scale(1.1);
+   }
+}
+
+@keyframes floatUpDown {
+   0% {
+      transform: translateY(0);
+   }
+   50% {
+      transform: translateY(-20px);
+   }
+   100% {
+      transform: translateY(0);
+   }
+}

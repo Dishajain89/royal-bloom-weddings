@@ -1,0 +1,76 @@
+@import "../../../public/styles/partials/variables";
+.about {
+    width: 100%;
+    padding: 80px 5%;
+    background: #fff6f0; // Soft luxury theme background
+  
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+  
+      @media (max-width: 768px) {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  
+    .content {
+      flex: 1;
+      max-width: 600px;
+  
+      h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: $secondary-color; // Luxury rose gold
+        margin-bottom: 15px;
+  
+        span {
+          color: $primary-color; // Royal gold accent
+        }
+      }
+  
+      p {
+        font-size: 1.2rem;
+        color: $text-color;
+        line-height: 1.6;
+        margin-bottom: 10px;
+      }
+  
+      .signature {
+        font-style: italic;
+        font-weight: bold;
+        color: $secondary-color;
+      }
+    }
+  
+    .images {
+      display: flex;
+      flex-direction: row;
+      gap: 15px;
+  
+      @media (max-width: 768px) {
+        flex-direction: column;
+      }
+  
+      .imgWrapper {
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: 10px;
+          transition: transform 0.3s ease-in-out;
+  
+          &:hover {
+            transform: scale(1.05);
+          }
+        }
+      }
+    }
+  }
+  

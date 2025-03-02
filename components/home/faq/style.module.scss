@@ -1,0 +1,77 @@
+@import "../../../public/styles/partials/variables";
+
+.faqSection {
+  padding: 80px 5%;
+  background-color: $secondary-color; // Theme color
+  color: #fff;
+  text-align: center;
+  position: relative;
+
+  .container {
+    max-width: 800px;
+    margin: auto;
+  }
+
+  .title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    color: $background-color; // Theme color
+
+    span{
+        color: $primary-color; 
+    }
+  }
+
+  .faqList {
+    .faqItem {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.2);
+      }
+
+      .faqQuestion {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: $background-color;
+        transition: color 0.3s;
+
+        span {
+          font-size: 1.5rem;
+          transition: transform 0.3s;
+        }
+      }
+
+      .faqAnswer {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
+        font-size: 1rem;
+        margin-top: 10px;
+      }
+
+      &.open {
+        .faqAnswer {
+          max-height: 150px;
+          opacity: 1;
+        }
+
+        .faqQuestion span {
+          transform: rotate(180deg);
+        }
+      }
+    }
+  }
+}
