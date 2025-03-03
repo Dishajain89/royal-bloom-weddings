@@ -58,6 +58,20 @@
         color: $secondary-background;
       }
     }
+
+    @media (max-width: 768px) {
+      .content {
+        h1 {
+          font-size: 32px;
+        }
+        p {
+          font-size: 18px;
+        }
+      }
+    }
+    @media (max-width: 370px) {
+     height: 92vh;
+    }
   }
 
   // Swiper controls customization
@@ -70,16 +84,7 @@
     color: $primary-color;
   }
 
-  @media (max-width: 768px) {
-    .content {
-      h1 {
-        font-size: 32px;
-      }
-      p {
-        font-size: 18px;
-      }
-    }
-  }
+ 
 }
 
 // Fade-in animation
