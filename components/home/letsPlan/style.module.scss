@@ -1,4 +1,5 @@
-@import "../../../public/styles/partials/variables";
+@use "../../../public/styles/partials/variables" as *;
+@use "sass:color";
 
 .letsPlan {
   position: relative;
@@ -60,7 +61,7 @@
     transition: all 0.3s ease-in-out;
 
     &:hover {
-      background: lighten($secondary-color, 10%);
+      background: color.adjust($secondary-color, $lightness: 10%);
     }
   }
 

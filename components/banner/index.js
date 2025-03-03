@@ -9,8 +9,7 @@ const Banner = ({ title, description, backgroundImage }) => {
         <Image
           src={backgroundImage}
           alt="About Banner"
-          layout="fill"
-          objectFit="cover"
+          fill style={{ objectFit: "cover" }}
           priority
           className={styles.image}
         />

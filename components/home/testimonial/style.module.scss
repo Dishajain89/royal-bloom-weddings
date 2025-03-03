@@ -1,4 +1,5 @@
-@import "../../../public/styles/partials/variables";
+@use "../../../public/styles/partials/variables" as *;
+@use "sass:color";
 
 .testimonial {
   width: 100%;
@@ -93,7 +94,7 @@
       align-items: center;
 
       &:hover {
-        background: darken($primary-color, 10%);
+        background: color.adjust($primary-color, $lightness: -10%);
       }
     }
   }

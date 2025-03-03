@@ -51,8 +51,7 @@ const HomeBanner = () => {
             <Image
               src={slide.image}
               alt={slide.alt}
-              layout="fill"
-              objectFit="cover"
+              fill style={{ objectFit: "cover" }}
               priority
               quality={90}
             />

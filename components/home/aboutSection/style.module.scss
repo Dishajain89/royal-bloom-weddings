@@ -1,4 +1,4 @@
-@import "../../../public/styles/partials/variables";
+@use "../../../public/styles/partials/variables" as *;;
 .about {
     width: 100%;
     padding: 80px 5%;
