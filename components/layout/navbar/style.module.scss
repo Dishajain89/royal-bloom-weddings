@@ -1,80 +1,85 @@
-@use "../../../public/styles/partials/variables" as *;;
-
+@use "../../../public/styles/partials/variables" as *;
 
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 30px;
-  background-color: $background-color;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-//   position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  font-family: $font-primary;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 15px 30px;
+   background-color: $background-color;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+   //   position: fixed;
+   width: 100%;
+   top: 0;
+   left: 0;
+   z-index: 1000;
+   font-family: $font-primary;
 
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: $primary-color;
-  }
+   .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: $primary-color;
+   }
 
-  .navLinks {
-    display: flex;
-    list-style: none;
-    gap: 20px;
+   .navLinks {
+      display: flex;
+      list-style: none;
+      gap: 20px;
 
-    li {
-      a {
-        text-decoration: none;
-        color: $secondary-color;
-        font-size: 18px;
-        font-weight: 500;
-        transition: $transition;
+      li {
+         a {
+            text-decoration: none;
+            color: $secondary-color;
+            font-size: 18px;
+            font-weight: 500;
+            transition: $transition;
 
-        &:hover {
-          color: $hover-color;
-        }
+            &:hover {
+               color: $hover-color;
+            }
+         }
       }
-    }
-  }
+   }
 
-  .hamburger {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
-    color: $primary-color;
-    transition: $transition;
-  }
+   .hamburger {
+      display: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: $primary-color;
+      transition: $transition;
+   }
 
-  @media screen and (max-width: 768px) {
-    .navLinks {
-      position: absolute;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      flex-direction: column;
-      background-color: rgba(255, 255, 255, 0.95);
-      text-align: center;
-      padding: 20px 0;
-      gap: 15px;
-      transition: transform 0.3s ease-in-out;
-      transform: translateY(-200%);
-      opacity: 0;
-      visibility: hidden;
-    }
+   @media screen and (max-width: 768px) {
+      .navLinks {
+         position: absolute;
+         top: 60px;
+         left: 0;
+         width: 100%;
+         flex-direction: column;
+         background-color: rgba(255, 255, 255, 0.95);
+         text-align: center;
+         padding: 20px 0;
+         gap: 15px;
+         transition: transform 0.3s ease-in-out;
+         transform: translateY(-200%);
+         opacity: 0;
+         visibility: hidden;
+      }
 
-    .active {
-      transform: translateY(0);
-      opacity: 1;
-      visibility: visible;
-      z-index: 99;
-    }
+      .active {
+         transform: translateY(0);
+         opacity: 1;
+         visibility: visible;
+         z-index: 99;
+      }
 
-    .hamburger {
-      display: block;
-    }
-  }
+      .hamburger {
+         display: block;
+      }
+   }
+
+   @media (max-width: 370px) {
+      .logo {
+         font-size: 1.2rem;
+      }
+   }
 }
