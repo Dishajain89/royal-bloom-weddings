@@ -43,7 +43,7 @@
       max-width: 80%;
       
       h1 {
-        font-size: 48px;
+        font-size: 3rem;
         font-weight: bold;
         color: $primary-color;
         text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
@@ -51,7 +51,7 @@
       }
 
       p {
-        font-size: 24px;
+        font-size: 1.5rem;
         margin-top: 10px;
         font-weight: 300;
         animation: fadeInUp 1.2s ease-in-out;
@@ -62,7 +62,7 @@
     @media (max-width: 768px) {
       .content {
         h1 {
-          font-size: 32px;
+          font-size: 2rem;
         }
         p {
           font-size: 18px;

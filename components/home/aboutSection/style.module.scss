@@ -53,6 +53,12 @@
   
       @media (max-width: 768px) {
         flex-direction: column;
+
+        .content{
+          h2{
+            font-size: 2rem;
+          }
+        }
       }
   
       .imgWrapper {
@@ -69,6 +75,15 @@
           &:hover {
             transform: scale(1.05);
           }
+        }
+      }
+    }
+
+    @media (max-width: 768px) {
+
+      .content{
+        h2{
+          font-size: 2rem;
         }
       }
     }
